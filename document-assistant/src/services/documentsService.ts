@@ -1,6 +1,7 @@
 import axios from "axios";
 
-import { DocumentItem, mapDocuments, PostAPI } from "@/utils/mapDocuments";
+import { mapDocuments } from "@/utils/mapDocuments";
+import { DocumentItem, PostAPI } from "@/types/documents";
 
 const API_URL = "https://jsonplaceholder.typicode.com/posts";
 

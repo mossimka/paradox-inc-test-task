@@ -17,8 +17,8 @@ const Header = () => {
           <Image
             src="/images/logo.webp"
             alt="Test task Logo"
-            width={100}
-            height={100}
+            width={70}
+            height={70}
           />  
           Cool Header
         </Typography>
