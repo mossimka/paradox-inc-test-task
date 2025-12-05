@@ -1,0 +1,103 @@
+:root {
+  --color-bg-primary: #f5f7f6;
+  --color-bg-secondary: #e2e7e3;
+  --color-surface-hover: #d1e7dd;
+
+  --color-primary: #0b6b49; 
+  --color-primary-hover: #084d38;
+  --color-accent: #7b3fbf;
+  --color-accent-hover: #5a2e95;
+
+  --color-text-primary: #222222;
+  --color-text-secondary: #4d4d4d;
+  --color-text-invert: #ffffff;
+
+  --color-border: #0b6b49;
+  --color-border-focus: #7b3fbf;
+
+  --color-success: #0b6b49;
+  --color-success-hover: #084d38;
+  --color-warning: #7b3fbf;
+  --color-error: #e53935;
+
+  --color-green-light: #dff3eb;
+  --color-green-medium: #0b6b49;
+  --color-green-dark: #084d38;
+  --color-yellow: #7b3fbf;
+  --color-yellow-dark: #5a2e95;
+
+  --gradient-primary: linear-gradient(135deg, #0b6b49 0%, #7b3fbf 100%);
+  --gradient-secondary: linear-gradient(135deg, #7b3fbf 0%, #0b6b49 100%);
+  --gradient-accent: linear-gradient(135deg, #7b3fbf 0%, #5a2e95 100%);
+
+  --shadow: 0 8px 32px rgba(0, 150, 57, 0.15);
+  --hover-shadow: 0 12px 40px rgba(0, 150, 57, 0.25);
+  --active-shadow: 0 4px 16px rgba(0, 150, 57, 0.3);
+
+  --glass-bg: rgba(11, 107, 73, 0.06);
+  --glass-shadow: rgba(123, 63, 191, 0.08);
+  --glass-backdrop-blur: 20px;
+
+  --filter: drop-shadow(0 0 10px rgba(0, 150, 57, 0.2));
+  --filter2: drop-shadow(0 0 20px rgba(255, 214, 0, 0.5));
+}
+
+body.light {
+  --color-bg-primary: #f5f7f6;
+  --color-bg-secondary: #e2e7e3;
+  --color-surface-hover: #d1e7dd;
+
+  --color-primary: #0b6b49;
+  --color-primary-hover: #084d38;
+  --color-accent: #7b3fbf;
+  --color-accent-hover: #5a2e95;
+
+  --color-text-primary: #222222;
+  --color-text-secondary: #4d4d4d;
+  --color-text-invert: #ffffff;
+
+  --color-border: #0b6b49;
+  --color-border-focus: #7b3fbf;
+
+  --color-success: #0b6b49;
+  --color-success-hover: #084d38;
+  --color-warning: #7b3fbf;
+  --color-error: #e53935;
+
+  --gradient-primary: linear-gradient(135deg, #0b6b49 0%, #7b3fbf 100%);
+  --shadow: 0 8px 32px rgba(11, 107, 73, 0.12);
+}
+
+body.dark {
+  --color-bg-primary: #0b1220; 
+  --color-bg-secondary: #0f1724;
+  --color-surface-hover: rgba(255, 255, 255, 0.03);
+
+  --color-primary: #2b7a56;
+  --color-primary-hover: #14593f;
+  --color-accent: #8f66c9;
+  --color-accent-hover: #6b49a8;
+
+  --color-text-primary: #e6f7ef; 
+  --color-text-secondary: #bcd8c2;
+  --color-text-invert: #0b1220;
+
+  --color-border: rgba(43, 122, 86, 0.18);
+  --color-border-focus: rgba(143, 102, 201, 0.12);
+
+  --color-success: #2b7a56;
+  --color-success-hover: #14593f;
+  --color-warning: #8f66c9;
+  --color-error: #ff8a80;
+
+  --gradient-primary: linear-gradient(135deg, #2b7a56 0%, #8f66c9 100%);
+  --shadow: 0 12px 40px rgba(2, 6, 23, 0.6);
+  --hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+
+  --glass-bg: rgba(11, 107, 73, 0.04);
+  --glass-shadow: rgba(123, 63, 191, 0.12);
+  --glass-backdrop-blur: 8px;
+
+  --filter: none;
+  --filter2: none;
+}
