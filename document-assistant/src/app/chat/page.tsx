@@ -1,3 +1,7 @@
+import { Container } from "@mui/material";
+
 export default function DocumentsPage() {
-  return <div>Documents Page</div>;
+  return (
+    <Container></Container>
+  );
 }

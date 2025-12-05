@@ -1,47 +1,73 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, Github, Home, Info, Cog, Mail } from "lucide-react";
+import { Box, Container, Typography, Button } from "@mui/material";
+import { MessageCircle, Github, Home, FileText } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 p-8 mt-8">
-      <div className="">
-        <div className="flex items-center">
+    <Box component="footer" sx={{ bgcolor: "grey.200", p: 4, mt: 4 }}>
+      <Container maxWidth="lg">
+        <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
           <Image
-            src="/logo.webp"
+            src="/images/logo.webp"
             alt="Test task Logo"
-            width={200}
+            width={100}
             height={100}
-            className=""
           />
-          <h1 className="">Test task</h1>
-          <p className="">Tables, websockets, and more</p>
-        </div>
-        <nav className="flex gap-8 justify-center my-4">
-          <Link href="#top" className="">
-            <Home size={18} />
-            <span>Home</span>
-          </Link>
-          <Link href="/documents" className="">
-            <Info size={18} />
-            <span>Documents</span>
-          </Link>
-          <Link href="/chat" className="">
-            <MessageCircle size={18} />
-            <span>Chat</span>
-          </Link>
-          <Link
-            className=""
+          <Box sx={{ ml: 2 }}>
+            <Typography variant="h5" component="h1">
+              Test task
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Tables, websockets, and more
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box sx={{ display: "flex", gap: 2, justifyContent: "center", mb: 3 }}>
+          <Button
+            component={Link}
+            href="/"
+            startIcon={<Home size={18} />}
+            variant="text"
+          >
+            Home
+          </Button>
+          <Button
+            component={Link}
+            href="/documents"
+            startIcon={<FileText size={18} />}
+            variant="text"
+          >
+            Documents
+          </Button>
+          <Button
+            component={Link}
+            href="/chat"
+            startIcon={<MessageCircle size={18} />}
+            variant="text"
+          >
+            Chat
+          </Button>
+          <Button
+            component={Link}
             href="https://github.com/mossimka/paradox-inc-test-task"
             target="_blank"
             rel="noopener noreferrer"
+            startIcon={<Github size={24} />}
+            variant="text"
           >
-            <Github size={24} />
-          </Link>
-        </nav>
-      </div>
-      <p className="">All rights reserved 2025</p>
-    </footer>
+            Github
+          </Button>
+        </Box>
+
+        <Typography variant="body2" color="text.secondary" textAlign="center">
+          All rights reserved 2025
+        </Typography>
+      </Container>
+    </Box>
   );
 };
 

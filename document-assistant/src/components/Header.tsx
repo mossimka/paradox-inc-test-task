@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 
 const Header = () => {
   const pathname = usePathname();
@@ -9,35 +11,45 @@ const Header = () => {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div className="flex items-center justify-between p-4 bg-gray-200">
-      <h1>Cool Header</h1>
-      <nav className="flex gap-16">
-        <Link
-          className={`m-2 ${
-            isActive("/") ? "bg-green-800 text-white" : "bg-gray-400"
-          } rounded-md px-2 py-1`}
-          href="/"
-        >
-          Home
-        </Link>
-        <Link
-          className={`m-2 ${
-            isActive("/documents") ? "bg-green-800 text-white" : "bg-gray-400 "
-          } rounded-md px-2 py-1`}
-          href="/documents"
-        >
-          Documents
-        </Link>
-        <Link
-          className={`m-2 ${
-            isActive("/chat") ? "bg-green-800 text-white" : "bg-gray-400"
-          } rounded-md px-2 py-1`}
-          href="/chat"
-        >
-          Chat
-        </Link>
-      </nav>
-    </div>
+    <AppBar position="static" color="default" elevation={1}>
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Image
+            src="/images/logo.webp"
+            alt="Test task Logo"
+            width={100}
+            height={100}
+          />  
+          Cool Header
+        </Typography>
+        <Box sx={{ display: "flex", gap: 2 }}>
+          <Button
+            component={Link}
+            href="/"
+            variant={isActive("/") ? "contained" : "outlined"}
+            color="primary"
+          >
+            Home
+          </Button>
+          <Button
+            component={Link}
+            href="/documents"
+            variant={isActive("/documents") ? "contained" : "outlined"}
+            color="primary"
+          >
+            Documents
+          </Button>
+          <Button
+            component={Link}
+            href="/chat"
+            variant={isActive("/chat") ? "contained" : "outlined"}
+            color="primary"
+          >
+            Chat
+          </Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 

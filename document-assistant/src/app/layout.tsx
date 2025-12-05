@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+import ProgressBar from "@/components/utils/ProgressBar";
 import "@/styles/globals.css";
 
 const montserrat = localFont({
@@ -39,6 +39,7 @@ export default function RootLayout({
       <body className={`antialiased ${montserrat.variable}`}>
         <CssBaseline />
         <Header />
+        <ProgressBar />
         {children}
         <Footer />
       </body>
