@@ -2,7 +2,7 @@
 
 > **Live Demo:** [https://paradox-inc-test-task.vercel.app/](https://paradox-inc-test-task.vercel.app/)
 
-A modern document management and AI chat interface built as a test task for the Frontend Junior position at Paradox Inc.
+A modern document management and chat interface built as a test task for the Frontend Junior position at Paradox Inc.
 
 ## 🎯 Task Overview
 
