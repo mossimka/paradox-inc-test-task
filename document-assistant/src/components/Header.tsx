@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import { NAV_ITEMS } from "@/constants/navigation";
 
 const Header = () => {
   const pathname = usePathname();
@@ -16,37 +17,24 @@ const Header = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', gap: 2 }}>
           <Image
             src="/images/logo.webp"
-            alt="Test task Logo"
+            alt="Document Assistant Logo"
             width={70}
             height={70}
           />  
-          Cool Header
+          Test Task
         </Typography>
         <Box sx={{ display: "flex", gap: 2 }}>
-          <Button
-            component={Link}
-            href="/"
-            variant={isActive("/") ? "contained" : "outlined"}
-            color="primary"
-          >
-            Home
-          </Button>
-          <Button
-            component={Link}
-            href="/documents"
-            variant={isActive("/documents") ? "contained" : "outlined"}
-            color="primary"
-          >
-            Documents
-          </Button>
-          <Button
-            component={Link}
-            href="/chat"
-            variant={isActive("/chat") ? "contained" : "outlined"}
-            color="primary"
-          >
-            Chat
-          </Button>
+          {NAV_ITEMS.map((item) => (
+            <Button
+              key={item.href}
+              component={Link}
+              href={item.href}
+              variant={isActive(item.href) ? "contained" : "outlined"}
+              color="primary"
+            >
+              {item.label}
+            </Button>
+          ))}
         </Box>
       </Toolbar>
     </AppBar>

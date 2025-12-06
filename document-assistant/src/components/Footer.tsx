@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Box, Container, Typography, Button } from "@mui/material";
 import { MessageCircle, Github, Home, FileText } from "lucide-react";
 
+import { NAV_ITEMS } from "@/constants/navigation";
+
 const Footer = () => {
   return (
     <Box component="footer" sx={{ bgcolor: "grey.200", p: 4, mt: 4 }}>
@@ -12,7 +14,7 @@ const Footer = () => {
         <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
           <Image
             src="/images/logo.webp"
-            alt="Test task Logo"
+            alt={"Test Task Logo"}
             width={100}
             height={100}
           />
@@ -27,30 +29,22 @@ const Footer = () => {
         </Box>
 
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", mb: 3 }}>
-          <Button
-            component={Link}
-            href="/"
-            startIcon={<Home size={18} />}
-            variant="text"
-          >
-            Home
-          </Button>
-          <Button
-            component={Link}
-            href="/documents"
-            startIcon={<FileText size={18} />}
-            variant="text"
-          >
-            Documents
-          </Button>
-          <Button
-            component={Link}
-            href="/chat"
-            startIcon={<MessageCircle size={18} />}
-            variant="text"
-          >
-            Chat
-          </Button>
+          {NAV_ITEMS.map((item) => {
+            const icons = { "/": Home, "/documents": FileText, "/chat": MessageCircle 
+            } as const;
+            const Icon = icons[item.href as keyof typeof icons];
+            return (
+              <Button
+                key={item.href}
+                component={Link}
+                href={item.href}
+                startIcon={Icon && <Icon size={18} />}
+                variant="text"
+              >
+                {item.label}
+              </Button>
+            );
+          })}
           <Button
             component={Link}
             href="https://github.com/mossimka/paradox-inc-test-task"
