@@ -28,7 +28,16 @@ const Footer = () => {
           </Box>
         </Box>
 
-        <Box sx={{ display: "flex", gap: 2, justifyContent: "center", mb: 3 }}>
+        <Box sx={{ 
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(4, 1fr)"
+          },
+          gap: 2,
+          mb: 3 
+        }}>
           {NAV_ITEMS.map((item) => {
             const icons = { "/": Home, "/documents": FileText, "/chat": MessageCircle 
             } as const;
