@@ -1,5 +1,5 @@
 export type DocumentItem = {
-  id: string;
+  id: number;
   fileName: string;
   version: string;
   sizeInBytes: number;
